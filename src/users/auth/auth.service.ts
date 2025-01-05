@@ -18,6 +18,8 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
+
+  // This rouute allow for account creation/regsitration
   async create(dto: CreateUserDto): Promise<User> {
     const { name, email, password, role = 'user' } = dto;
 
@@ -51,6 +53,8 @@ export class AuthService {
     return { accessToken };
   }
 
+
+  // This Route is for forgot password requuest
   async forgotPassword(dto: ForgotPasswordDto): Promise<{ message: string }> {
     const user = await this.userRepository.findOne({ where: { email: dto.email } });
     if (!user) throw new NotFoundException('User not found');
@@ -68,8 +72,8 @@ export class AuthService {
       expires_at: expiresAt,
     });
 
-     // Send the reset token or link to the user (mock email for now)
-     const resetLink = `https://your-frontend-app.com/reset-password?token=${resetToken}`;
+     // Send the reset token or link to the user (mock email for now. real mailer for production app)
+     const resetLink = `http://localhost:3000/reset-password?token=${resetToken}`;
 
     // Send the token to the user (mock email for now)
     console.log(`Password reset token: ${resetLink}`);
@@ -77,6 +81,8 @@ export class AuthService {
     return { message: 'Password reset instructions have been sent to your email' };
   }
 
+
+  // This route uses the token and the new password to reset the user's password
   async resetPassword(dto: ResetPasswordDto): Promise<{ message: string }> {
     const { token, newPassword } = dto;
 

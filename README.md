@@ -16,10 +16,8 @@ $ npm run start:prod
 
 
 ## unit tests
-$ npm run test
 
-# e2e tests
-$ npm run test:e2e
+npm run test:e2e
 
 
 ## Developer
@@ -35,7 +33,7 @@ This project is a basic authentication system built with NestJS, SQLite, and JWT
 
 ## Project Setup
 
-Prerequisites
+- Prerequisites
 Node.js (v18.x or above)
 npm (v8.x or above)
 Docker (optional, for Dockerization)
@@ -79,6 +77,7 @@ Request Body: {
       * Response (Error): {
         "message": "User already exists"
       }
+
 2. Login API
 URL: /auth/login
 Method: POST
@@ -134,13 +133,20 @@ Response (Error): {
 Admin routes and user routes are separated.
 Only users with an admin role can access certain routes like /admin 
 
+URL: /users/admin-only
+
+Response (Success(User with Admin role)): {
+    "message": "This is admin-only data."
+}
+Response (Error): {
+    "message": "Access Denied: Your role (user) is not allowed. This resource is only available for roles: admin"
+}
 
 ## Assumptions:
 The app is built using SQLite as the database.
 The app uses JWT for authentication, with the secret key defined in the .env file.
 Passwords are hashed using bcrypt.
-Role-based authentication is included, but you can extend it to suit more roles.
-
+Role-based authentication is included
 
 
 

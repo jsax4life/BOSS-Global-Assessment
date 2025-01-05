@@ -72,7 +72,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImVtYWlsIjoic2FtdWVsQGdtYWlsLmNvbSIsImlhdCI6MTczNjAzMjI3NywiZXhwIjoxNzM2MDM1ODc3fQ.rITbMSoJdiNrh_55FXRswkkQHFFk2V4jMod0X_-9AIw",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiYWJlbGFzaXNkb0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MzYxMTk0OTIsImV4cCI6MTczNjEyMzA5Mn0.mIord620rHigTLgBS4UbgL-CB9V__dVJ4yF3hXC6W6w",
 							"type": "string"
 						}
 					]
@@ -80,13 +80,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/users/profile",
+					"raw": "{{base_url}}/users/admin-only",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"users",
-						"profile"
+						"admin-only"
 					]
 				},
 				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
@@ -115,7 +115,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"name\": \"Abel Anab\",\n  \"email\": \"abel2@gmail.com\",\n  \"password\": \"1234567\",\n  \"role\": \"user\"\n}",
+					"raw": "{\n  \"name\": \"Abel Anab Asido\",\n  \"email\": \"abelasido@gmail.com\",\n  \"password\": \"1234567\",\n  \"role\": \"admin\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -158,7 +158,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"email\": \"abel2@gmail.com\",\n  \"password\": \"123456789\"\n}",
+					"raw": "{\n  \"email\": \"abelasisdo@gmail.com\",\n  \"password\": \"1234567\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"

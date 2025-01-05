@@ -9,6 +9,7 @@ import { Roles } from './decorators/roles.decorator';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
+// this route return the name and email for an auuthenticated user (only with a valid JWT.)
   @UseGuards(JwtAuthGuard)
   @Get('profile')
   async getProfile(@Request() req: any) {
@@ -19,6 +20,8 @@ export class UsersController {
     };
   }
 
+  // This route implement the custom role RoleGuard for the role-based authentication (admin). 
+  // Only User with the role Admin will be able ttto access this route. Change to    @Roles('user') if only user should have access.
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('admin')
   @Get('admin-only')
