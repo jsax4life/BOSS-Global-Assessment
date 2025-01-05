@@ -14,8 +14,8 @@ $ npm run start:prod
 
 ## Run tests
 
-```bash
-# unit tests
+
+## unit tests
 $ npm run test
 
 # e2e tests
@@ -34,6 +34,7 @@ This project is licensed under the MIT License.
 This project is a basic authentication system built with NestJS, SQLite, and JWT. It provides user signup, login, JWT-based authentication, password recovery, role-based authentication, and secure APIs.
 
 ## Project Setup
+
 Prerequisites
 Node.js (v18.x or above)
 npm (v8.x or above)
@@ -58,7 +59,7 @@ This will set up your app with a SQLite database in Docker.
 4. If you're running locally, set up environment variables by creating a .env file: JWT_SECRET=your-secret-key
 
 
-API Documentation
+## API Documentation
 1. Signup API
 URL: /auth/signup
 Method: POST
@@ -78,7 +79,6 @@ Request Body: {
       * Response (Error): {
         "message": "User already exists"
       }
-
 2. Login API
 URL: /auth/login
 Method: POST
@@ -130,12 +130,12 @@ Response (Error): {
 
 
 
-Role-based Authentication
+## Role-based Authentication
 Admin routes and user routes are separated.
 Only users with an admin role can access certain routes like /admin 
 
 
-Assumptions:
+## Assumptions:
 The app is built using SQLite as the database.
 The app uses JWT for authentication, with the secret key defined in the .env file.
 Passwords are hashed using bcrypt.
