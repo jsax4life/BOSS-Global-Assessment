@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: nestjs-app
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+      - JWT_SECRET=test-secret 
+      
+    depends_on:
+      - db
+
+  db:
+    image: sqlite3
+    container_name: sqlite-db
+    volumes:
+      - ./data:/data
+    environment:
+      - SQLITE_DB_PATH=/data/database.sqlite
+    ports:
+      - "3306:3306"
